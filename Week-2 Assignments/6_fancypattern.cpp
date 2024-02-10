@@ -6,21 +6,28 @@ int main()
 {
     int n = 5;
     
-    int k = 0;
-    for(int i = 0 ; i < n; i++)
+    int k = 1;
+    for(int i = 0 ; i < 9; i++)
     {
-        if(i<n){
-            for(int j = 0; j<2*i+1; j++,k++){
-                if(j%2){
+        if(i<n-1){
+            for(int j = 0; j<2*i+1; j++)
+            {
+                if(j%2 == 0){
                     cout<<k;
+                    k++;
                 }
                 else cout<<"*";
             }
         }
 
         else{
-            for(int j = 0; j>=n; j++){
-                cout<<"*";
+           for(int j = 0; j<2*i+1; j++)
+            {
+                if(j%2 == 0){
+                    cout<<k;
+                    k--;
+                }
+                else cout<<"*";
             }
         }         
         cout<<endl;
