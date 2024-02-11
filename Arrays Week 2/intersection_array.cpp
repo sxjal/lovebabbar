@@ -23,8 +23,12 @@ int main()
          
     }
  
-    for(int k = 0; k < ans.size(); k++){
-        cout<<ans[k]<<" ";
+    // for(int k = 0; k < ans.size(); k++){
+    //     cout<<ans[k]<<" ";
+    // }
+
+    for( auto value:ans){
+        cout<<value<<" ";
     }
     return 0;
 }
