@@ -11,16 +11,19 @@ int main()
     int start = 0;
     int end = a.size()-1;
 
-    for(int value = 0; value<a.size(); value++){
-        if(a[value] == 1){
-            swap(a[value],a[end--]);
-            continue;
+    int i = 0;
+
+    while(i<=end){
+        if(a[i] == 0){
+            swap(a[i],a[start]);
+            i++;
+            start++;
         }
-        else if(a[value] == 0){
-            swap(a[value],a[start--]);
-            continue;
+        else{
+            swap(a[i],a[end]);
+            // i++;
+            end--;
         }
-       
     }
 
     for( auto value:a){
