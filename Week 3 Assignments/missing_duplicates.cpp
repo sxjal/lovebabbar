@@ -3,28 +3,29 @@
 
 using namespace std;
 
-int main()
-{
-    int n = 0;
-    
-    cout<<"\n Enter Value: ";
-    cin>>n;
 
- 
-    vector<int> arr(n);
+int solution(int arr[], int n){
+    int index = arr[0];
 
     for(int i = 0; i < n; i++){
-        cin>>arr[i];
+       index = abs(arr[i]);
+       arr[index] *= -1;
     }
 
-    int ans = 0;
-
-    for(int i = 0; i < n; i++)
-    {
-        ans = ans ^ arr[i];
+    for(int i = 0; i<n; i++){
+        if(arr[i] < 0){
+            return i+1;
+        }
     }
 
-    cout<<ans;
+    return -1;
+}
+int main()
+{
+    int arr[] = {1,3,5,3,4};
+    int size = sizeof(arr)/sizeof(int);
+
+    cout<<solution(arr,size);
 
     return 0;
 }
